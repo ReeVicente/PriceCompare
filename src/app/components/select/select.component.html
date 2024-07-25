@@ -1,0 +1,4 @@
+<div *ngIf="selectLabel">{{selectLabel}}</div>
+<select class="select-input">
+  <option *ngFor="let item of selectOptions" [value]="item.value">{{ item.label }}</option>
+</select>
