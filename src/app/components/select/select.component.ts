@@ -37,6 +37,7 @@ export class SelectComponent implements ControlValueAccessor {
     this.markAsTouched();
     let target = e.target as HTMLSelectElement;
     if(this.disabled) return;
+    this.selectedValue = target.value;
     this.onChange(target.value);
   }
 

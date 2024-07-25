@@ -75,8 +75,17 @@ export class TarifService {
 
   public clearFilters() {
     this.getTarifs({
-      filters: {},
+      filters: {
+        benefitId: undefined,
+        downloadSpeed: undefined,
+        uploadSpeed: undefined
+      },
       priceOrder: this._currentPriceOrderSubject$.getValue() ?? undefined
+    });
+    this._currentFiltersSubject$.next({
+      benefitId: '',
+      downloadSpeed: undefined,
+      uploadSpeed: undefined
     });
   }
 
@@ -85,7 +94,6 @@ export class TarifService {
     priceOrder: '' | 'asc' | 'desc'
   }) {
     let tarifsParsed$ = this.tarifs$.pipe(first())
-    this._tarifListSubject$.next([])
     if (params?.filters) {
 
       tarifsParsed$ = tarifsParsed$.pipe(

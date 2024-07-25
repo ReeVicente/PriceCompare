@@ -31,22 +31,31 @@ export class FilterCardComponent implements OnInit{
       if (Number(this.filterForm.get('uploadSpeed')?.value) !== filter.uploadSpeed) {
         this.filterForm.patchValue({
           uploadSpeed: filter.uploadSpeed?.toString() ?? ''
+        }, {
+          onlySelf: true
         })
       }
 
       if (Number(this.filterForm.get('downloadSpeed')?.value) !== filter.downloadSpeed) {
         this.filterForm.patchValue({
           downloadSpeed: filter.downloadSpeed?.toString() ?? ''
+        }, {
+          onlySelf: true
         })
       }
 
       if (this.filterForm.get('benefitId')?.value !== filter.benefitId) {
-
         this.filterForm.patchValue({
           benefitId: filter.benefitId ?? ''
+        }, {
+          onlySelf: true,
         })
       }
     })
+  }
+
+  clearForm () {
+    this.tarifService.clearFilters()
   }
 
   onSubmit() {
