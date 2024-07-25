@@ -31,10 +31,18 @@ export class TarifService {
     new TarifModel({
       id: 3,
       name: 'Tarif 3',
-      price: 30,
+      price: 210,
       benefits: [{name: 'Benefit 1', id: 1}, {name: 'Benefit 2', id: 2}],
-      uploadSpeed: 30,
-      downloadSpeed: 30
+      uploadSpeed: 100,
+      downloadSpeed: 150
+    }),
+    new TarifModel({
+      id: 4,
+      name: 'Tarif 4',
+      price: 30,
+      benefits: [{name: 'Benefit 1', id: 1}, {name: 'Benefit 2', id: 2}, {name: 'Benefit 3', id: 3}],
+      uploadSpeed: 250,
+      downloadSpeed: 250
     }),
   ]);
 

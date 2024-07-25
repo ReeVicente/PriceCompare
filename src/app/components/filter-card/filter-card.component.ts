@@ -28,7 +28,6 @@ export class FilterCardComponent implements OnInit{
 
   ngOnInit(): void {
     this.tarifService.currentFilters$.subscribe(filter => {
-      console.log("AE")
       if (Number(this.filterForm.get('uploadSpeed')?.value) !== filter.uploadSpeed) {
         this.filterForm.patchValue({
           uploadSpeed: filter.uploadSpeed?.toString() ?? ''
@@ -47,7 +46,6 @@ export class FilterCardComponent implements OnInit{
           benefitId: filter.benefitId ?? ''
         })
       }
-
     })
   }
 

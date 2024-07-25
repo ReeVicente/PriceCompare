@@ -29,7 +29,7 @@
     </div>
     <div class="card-last-section">
       <div class="card-price">
-        <span>{{price}}</span>
+        <span>{{ ((price | currency: 'EUR') || "")?.replace('.', ',')}}</span>
       </div>
       <div class="card-button-container">
         <app-button class="full-mobile">To Tarif</app-button>
