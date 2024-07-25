@@ -4,10 +4,10 @@
   </div>
   <div class="container-right">
     <div class="container-header">
-      <app-select selectLabel="Ordenar por:" [selectOptions]="[{label: 'Price: Ascending', value: '1'}, {label: 'Price: Descending', value: '2'}]"></app-select>
+      <app-select selectLabel="Order by:" [selectOptions]="[{label: 'Price: Ascending', value: '1'}, {label: 'Price: Descending', value: '2'}]"></app-select>
       <div class="container-header-right">
-        <app-button>Filtrar</app-button>
-        <app-button>Limpar filtros</app-button>
+        <app-button (onClick)="openModal()">Filter</app-button>
+        <app-button>Clean Filter</app-button>
       </div>
     </div>
     <app-card [position]="1" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>

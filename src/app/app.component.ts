@@ -9,6 +9,10 @@ export class AppComponent {
   title = 'verivox';
   isOpen = false;
 
+  openModal() {
+    this.isOpen = true;
+  }
+
   closeModal() {
     this.isOpen = false;
   }

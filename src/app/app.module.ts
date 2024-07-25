@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {CardComponent} from "./components/card/card.component";
-import { FilterButtonComponent } from './components/filter-button/filter-button.component';
 import { SelectComponent } from './components/select/select.component';
 import { FilterCardComponent } from './components/filter-card/filter-card.component';
 import { InputComponent } from './components/input/input.component';
@@ -17,7 +16,6 @@ import {ButtonComponent} from "./components/button/button.component";
   imports: [
     BrowserModule,
     CardComponent,
-    FilterButtonComponent,
     SelectComponent,
     FilterCardComponent,
     InputComponent,
