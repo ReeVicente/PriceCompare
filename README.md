@@ -73,9 +73,3 @@ This command uses [Karma](https://karma-runner.github.io) as the test runner.
 ## Conclusion
 
 The Compare Tool project is designed to help users easily compare internet service plans. By maintaining a clear and organized structure, including components, services, and models, the application ensures a modular and maintainable codebase.
-
-For further development or contributing, please refer to the Angular documentation and best practices.
-
----
-
-This README provides a clearer and more detailed overview of the project, making it easier for new developers or contributors to understand the purpose, structure, and how to get started with the project.
