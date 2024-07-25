@@ -4,6 +4,12 @@ $color-blue: #3d8ace;
 $color-green: #388e56;
 $color-gray: #cccccc;
 
+// breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
 :root {
   --color-primary: #{$color-primary};
   --color-background: #{$color-background};

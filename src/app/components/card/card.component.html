@@ -3,33 +3,37 @@
     {{position}}.
   </div>
   <div class="card-description">
-    <div class="card-title">
-      {{title}}
-    </div>
-    <div class="card-speed-container">
-      <div class="card-speed card-speed-upload">
-        <img alt="upload icon" ngSrc="../../../assets/icons/upload-icon.svg" height="15" width="15"/>
-        <span>{{ uploadSpeed }}</span>
+    <div class="card-first-section">
+      <div class="card-title">
+        {{title}}
       </div>
-      <div class="card-speed card-speed-download">
-        <img alt="download icon" ngSrc="../../../assets/icons/download-icon.svg" height="15"
-             width="15"/>
-        <span>{{downloadSpeed}}</span>
+      <div class="card-speed-container">
+        <div class="card-speed card-speed-upload">
+          <img alt="upload icon" ngSrc="../../../assets/icons/upload-icon.svg" height="15" width="15"/>
+          <span>{{ uploadSpeed }}</span>
+        </div>
+        <div class="card-speed card-speed-download">
+          <img alt="download icon" ngSrc="../../../assets/icons/download-icon.svg" height="15"
+               width="15"/>
+          <span>{{downloadSpeed}}</span>
+        </div>
+      </div>
+      <div class="card-benefits-container">
+        <ul class="card-benefits-list" *ngIf="benefits">
+          <li *ngFor="let benefit of benefits ">
+            <img alt="check icon" ngSrc="../../../assets/icons/check-icon.svg" width="15" height="15"/>
+            {{benefit}}
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="card-benefits-container">
-      <ul class="card-benefits-list" *ngIf="benefits">
-        <li *ngFor="let benefit of benefits ">
-          <img alt="check icon" ngSrc="../../../assets/icons/check-icon.svg" width="15" height="15"/>
-          {{benefit}}
-        </li>
-      </ul>
-    </div>
-    <div class="card-price">
-      <span>{{price}}</span>
-    </div>
-    <div class="card-button-container">
-      <app-button>To Tarif</app-button>
+    <div class="card-last-section">
+      <div class="card-price">
+        <span>{{price}}</span>
+      </div>
+      <div class="card-button-container">
+        <app-button>To Tarif</app-button>
+      </div>
     </div>
   </div>
 </div>
