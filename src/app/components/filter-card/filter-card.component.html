@@ -1,0 +1,66 @@
+<div class="filter-card">
+  <span class="filter-card-title">
+    Filters
+  </span>
+  <div class="filter-card-section">
+    <span class="filter-card-section-title">Download Speed</span>
+    <div class="filter-card-section-content">
+      <div class="filter-card-section-item">
+        <input type="radio" name="download-speed" value="50" id="16-download">
+        <label for="16-download">16 Mbit/s</label>
+      </div>
+      <div>
+        <input type="radio" name="download-speed" value="50" id="50-download">
+        <label for="50-download">30 Mbit/s</label>
+      </div>
+      <div>
+        <input type="radio" name="download-speed" value="100" id="100-download">
+        <label for="100-download">100 Mbit/s</label>
+      </div>
+      <div>
+        <input type="radio" name="download-speed" value="150" id="150-download">
+        <label for="150-download">150 Mbit/s</label>
+      </div>
+      <div>
+        <input type="radio" name="download-speed" value="200" id="200-download">
+        <label for="200-download">200 Mbit/s</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-card-section">
+    <span class="filter-card-section-title">Upload Speed</span>
+    <div class="filter-card-section-content">
+      <div class="filter-card-section-item">
+        <input type="radio" name="download-speed" value="50" id="16-upload">
+        <label for="16-upload">16 Mbit/s</label>
+      </div>
+      <div>
+        <input type="radio" name="download-speed" value="50" id="50-upload">
+        <label for="50-upload">30 Mbit/s</label>
+      </div>
+      <div>
+        <input type="radio" name="download-speed" value="100" id="100-upload">
+        <label for="100-upload">100 Mbit/s</label>
+      </div>
+      <div>
+        <input type="radio" name="download-speed" value="150" id="150-upload">
+        <label for="150-upload">150 Mbit/s</label>
+      </div>
+      <div>
+        <input type="radio" name="download-speed" value="200" id="200-upload">
+        <label for="200-upload">200 Mbit/s</label>
+      </div>
+    </div>
+  </div>
+  <div class="filter-card-section">
+    <span class="filter-card-section-title">Benefit</span>
+    <div class="filter-card-section-content">
+     <app-select [selectOptions]="[{label: 'Benefit 1', value: '1'}, {label: 'Benefit 2', value: '2'}, {label: 'Benefit 3', value: '3'}]" ></app-select>
+    </div>
+  </div>
+  <div>
+    <app-button>Limpar</app-button>
+    <app-button>Filtrar</app-button>
+  </div>
+</div>
