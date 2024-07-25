@@ -1,7 +1,5 @@
 import {Component, inject} from '@angular/core';
 import {TarifService} from "./services/tarif.service";
-import {IFilter} from "./models/filter.model";
-import {delay, filter, first} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +7,6 @@ import {delay, filter, first} from "rxjs";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'verivox';
   tarifService = inject(TarifService);
   tarifs$ = this.tarifService.tarifList$;
 
