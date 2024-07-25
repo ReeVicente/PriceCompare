@@ -1,0 +1,40 @@
+@import "../assets/styles/_breakpoints";
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+  .container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .container-right {
+    display: none;
+  }
+
+  .container-left {
+    display: none;
+  }
+
+  .container-right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .container {
+    .container-left {
+      display: flex;
+      flex-direction: column;
+      padding: 0 30px;
+      width: 350px;
+    }
+    .container-header-right {
+      display: none;
+    }
+  }
+}

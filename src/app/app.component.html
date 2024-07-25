@@ -1,4 +1,19 @@
-<app-card [position]="1" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
-<app-card [position]="2" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
-<app-card [position]="3" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
-<app-card [position]="4" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
+<main class="container">
+  <div class="container-left">
+  <app-filter-card ></app-filter-card>
+  </div>
+  <div class="container-right">
+    <div class="container-header">
+      <app-select selectLabel="Ordenar por:" [selectOptions]="[{label: 'Price: Ascending', value: '1'}, {label: 'Price: Descending', value: '2'}]"></app-select>
+      <div class="container-header-right">
+        <app-button>Filtrar</app-button>
+        <app-button>Limpar filtros</app-button>
+      </div>
+    </div>
+    <app-card [position]="1" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
+    <app-card [position]="2" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
+    <app-card [position]="3" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
+    <app-card [position]="4" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
+  </div>
+  <app-modal modalTitle="modalTitle" [isOpen]="isOpen" (onClose)="closeModal()" ></app-modal>
+</main>
