@@ -1,0 +1,14 @@
+$color-primary: #ff5600;
+$color-background: #ffffff;
+$color-blue: #3d8ace;
+$color-green: #388e56;
+$color-gray: #cccccc;
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-background: #{$color-background};
+  --color-blue: #{$color-blue};
+  --color-green: #{$color-green};
+  --color-gray: #{$color-gray};
+}
+
