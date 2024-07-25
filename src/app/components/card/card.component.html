@@ -10,12 +10,12 @@
       <div class="card-speed-container">
         <div class="card-speed card-speed-upload">
           <img alt="upload icon" ngSrc="../../../assets/icons/upload-icon.svg" height="15" width="15"/>
-          <span>{{ uploadSpeed }}</span>
+          <span>{{ uploadSpeed | mbitFormatter }}</span>
         </div>
         <div class="card-speed card-speed-download">
           <img alt="download icon" ngSrc="../../../assets/icons/download-icon.svg" height="15"
                width="15"/>
-          <span>{{downloadSpeed}}</span>
+          <span>{{downloadSpeed | mbitFormatter}}</span>
         </div>
       </div>
       <div class="card-benefits-container">
@@ -29,7 +29,7 @@
     </div>
     <div class="card-last-section">
       <div class="card-price">
-        <span>{{ ((price | currency: 'EUR') || "")?.replace('.', ',')}}</span>
+        <span>{{ price | currency: 'EUR' | currencySeparatorFormatter}}</span>
       </div>
       <div class="card-button-container">
         <app-button class="full-mobile">To Tarif</app-button>
