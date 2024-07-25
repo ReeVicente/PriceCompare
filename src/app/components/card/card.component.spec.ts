@@ -29,7 +29,7 @@ describe('CardComponent', () => {
     expect(compiled.querySelector('.card-index').textContent).toContain('1');
     expect(compiled.querySelector('.card-speed-upload').textContent).toContain('10 Mbit/s');
     expect(compiled.querySelector('.card-speed-download').textContent).toContain('20 Mbit/s');
-    expect(compiled.querySelector('.card-price').textContent).toContain('20,00 €');
+    expect(compiled.querySelector('.card-price').textContent).toContain('€20,00');
   });
 
 
