@@ -1,27 +1,81 @@
-# Verivox
+# Compare Tool
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+This project, named "Compare Tool," is an Angular application designed to compare prices from various internet service providers. It was generated using the [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The primary purpose of this project is to offer users a convenient way to compare internet plans based on their pricing and features, helping them make informed decisions.
 
-## Code scaffolding
+## Project Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Components
 
-## Build
+The `components` directory contains all the components used in the project. Each component resides in its own folder, comprising the following files:
+- **HTML**: The template file that defines the component's structure and layout.
+- **CSS**: The stylesheet for styling the component.
+- **TypeScript**: The logic and behavior of the component.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Services
 
-## Running unit tests
+The `services` directory includes services that handle business logic and data transactions. Each service is contained within its own folder, consisting of TypeScript files that:
+- **Make HTTP requests**: To fetch data from APIs or other external sources.
+- **Implement business rules**: To process data and ensure the application behaves as expected.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Models
 
-## Running end-to-end tests
+The `models` directory defines the data structures used throughout the project. Each model resides in its own folder with TypeScript files that:
+- **Describe data structures**: These models define the shape and types of data that the application processes and manipulates.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Development Server
 
-## Further help
+To start a development server, run:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng serve
+```
+
+Navigate to [http://localhost:4200/](http://localhost:4200/). The application will automatically reload if you modify any of the source files.
+
+## Code Scaffolding
+
+To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+You can also use `ng generate` to create other Angular entities like directives, pipes, services, classes, guards, interfaces, enums, and modules:
+
+```bash
+ng generate directive|pipe|service|class|guard|interface|enum|module <name>
+```
+
+## Building the Project
+
+To build the project, run:
+
+```bash
+ng build
+```
+
+The build artifacts will be output to the `dist/` directory. This folder contains the compiled files ready for deployment.
+
+## Running Unit Tests
+
+To execute the unit tests, run:
+
+```bash
+ng test
+```
+
+This command uses [Karma](https://karma-runner.github.io) as the test runner.
+
+## Conclusion
+
+The Compare Tool project is designed to help users easily compare internet service plans. By maintaining a clear and organized structure, including components, services, and models, the application ensures a modular and maintainable codebase.
+
+For further development or contributing, please refer to the Angular documentation and best practices.
+
+---
+
+This README provides a clearer and more detailed overview of the project, making it easier for new developers or contributors to understand the purpose, structure, and how to get started with the project.
