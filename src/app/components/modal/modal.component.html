@@ -1,0 +1,13 @@
+
+<div class="modal" [ngClass]="{'show': isOpen}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>{{modalTitle}}</h2>
+      <span class="close" (click)="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+<div class="modal-background" [ngClass]="{'show': isOpen}" (click)="closeModal()"></div>
