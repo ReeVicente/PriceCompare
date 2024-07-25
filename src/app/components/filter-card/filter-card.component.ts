@@ -42,7 +42,7 @@ export class FilterCardComponent implements OnInit{
       }
 
       if (this.filterForm.get('benefitId')?.value !== filter.benefitId) {
-        console.log(filter.benefitId)
+
         this.filterForm.patchValue({
           benefitId: filter.benefitId ?? ''
         })
