@@ -8,6 +8,7 @@ import { FilterCardComponent } from './components/filter-card/filter-card.compon
 import { InputComponent } from './components/input/input.component';
 import {ModalComponent} from "./components/modal/modal.component";
 import {ButtonComponent} from "./components/button/button.component";
+import {FilterModalComponent} from "./components/filter-modal/filter-modal.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {ButtonComponent} from "./components/button/button.component";
     InputComponent,
     ModalComponent,
     ButtonComponent,
+    FilterModalComponent,
   ],
   providers: [],
   exports: [],

@@ -2,65 +2,74 @@
   <span class="filter-card-title">
     Filters
   </span>
-  <div class="filter-card-section">
-    <span class="filter-card-section-title">Download Speed</span>
-    <div class="filter-card-section-content">
-      <div class="filter-card-section-item">
-        <input type="radio" name="download-speed" value="50" id="16-download">
-        <label for="16-download">16 Mbit/s</label>
-      </div>
-      <div>
-        <input type="radio" name="download-speed" value="50" id="50-download">
-        <label for="50-download">30 Mbit/s</label>
-      </div>
-      <div>
-        <input type="radio" name="download-speed" value="100" id="100-download">
-        <label for="100-download">100 Mbit/s</label>
-      </div>
-      <div>
-        <input type="radio" name="download-speed" value="150" id="150-download">
-        <label for="150-download">150 Mbit/s</label>
-      </div>
-      <div>
-        <input type="radio" name="download-speed" value="200" id="200-download">
-        <label for="200-download">200 Mbit/s</label>
+  <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+    <div class="filter-card-section">
+      <span class="filter-card-section-title">Download Speed</span>
+      <div class="filter-card-section-content">
+        <div class="filter-card-section-item">
+          <input type="radio" formControlName="downloadSpeed" name="downloadSpeed" value="" id="no-download">
+          <label for="no-download">No filter</label>
+        </div>
+        <div class="filter-card-section-item">
+          <input type="radio" formControlName="downloadSpeed" name="downloadSpeed" value="16" id="16-download">
+          <label for="16-download">16 Mbit/s</label>
+        </div>
+        <div>
+          <input type="radio" formControlName="downloadSpeed" name="downloadSpeed" value="50" id="50-download">
+          <label for="50-download">50 Mbit/s</label>
+        </div>
+        <div>
+          <input type="radio" formControlName="downloadSpeed" name="downloadSpeed" value="100" id="100-download">
+          <label for="100-download">100 Mbit/s</label>
+        </div>
+        <div>
+          <input type="radio" formControlName="downloadSpeed" name="downloadSpeed" value="250" id="250-download">
+          <label for="250-download">250 Mbit/s</label>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="filter-card-section">
-    <span class="filter-card-section-title">Upload Speed</span>
-    <div class="filter-card-section-content">
-      <div class="filter-card-section-item">
-        <input type="radio" name="download-speed" value="50" id="16-upload">
-        <label for="16-upload">16 Mbit/s</label>
-      </div>
-      <div>
-        <input type="radio" name="download-speed" value="50" id="50-upload">
-        <label for="50-upload">30 Mbit/s</label>
-      </div>
-      <div>
-        <input type="radio" name="download-speed" value="100" id="100-upload">
-        <label for="100-upload">100 Mbit/s</label>
-      </div>
-      <div>
-        <input type="radio" name="download-speed" value="150" id="150-upload">
-        <label for="150-upload">150 Mbit/s</label>
-      </div>
-      <div>
-        <input type="radio" name="download-speed" value="200" id="200-upload">
-        <label for="200-upload">200 Mbit/s</label>
+    <div class="filter-card-section">
+      <span class="filter-card-section-title">Upload Speed</span>
+      <div class="filter-card-section-content">
+        <div class="filter-card-section-item">
+          <input type="radio" formControlName="uploadSpeed" name="uploadSpeed" value="" id="no-upload">
+          <label for="no-upload">No filter</label>
+        </div>
+        <div class="filter-card-section-item">
+          <input formControlName="uploadSpeed" type="radio" name="uploadSpeed" value="16" id="16-upload">
+          <label for="16-upload">16 Mbit/s</label>
+        </div>
+        <div>
+          <input formControlName="uploadSpeed" type="radio" name="uploadSpeed" value="50" id="50-upload">
+          <label for="50-upload">50 Mbit/s</label>
+        </div>
+        <div>
+          <input formControlName="uploadSpeed" type="radio" name="uploadSpeed" value="100" id="100-upload">
+          <label for="100-upload">100 Mbit/s</label>
+        </div>
+        <div>
+          <input formControlName="uploadSpeed" type="radio" name="uploadSpeed" value="250" id="250-upload">
+          <label for="250-upload">250 Mbit/s</label>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="filter-card-section">
-    <span class="filter-card-section-title">Benefit</span>
-    <div class="filter-card-section-content">
-     <app-select [selectOptions]="[{label: 'Benefit 1', value: '1'}, {label: 'Benefit 2', value: '2'}, {label: 'Benefit 3', value: '3'}]" ></app-select>
+    <div class="filter-card-section">
+      <span class="filter-card-section-title">Benefit</span>
+      <div class="filter-card-section-content">
+       <app-select formControlName="benefitId"
+         [selectOptions]="[
+            {label: 'No filter', value: ''},
+            {label: 'Benefit 1', value: '1'},
+            {label: 'Benefit 2', value: '2'},
+            {label: 'Benefit 3', value: '3'}
+         ]"
+       ></app-select>
+      </div>
     </div>
-  </div>
-  <div>
-    <app-button>Clean</app-button>
-    <app-button>Filter</app-button>
-  </div>
+    <div>
+      <app-button [disabled]="true" btnStyle="outline" (onClick)="tarifService.clearFilters()">Clear</app-button>
+      <app-button type="submit">Filter</app-button>
+    </div>
+  </form>
 </div>

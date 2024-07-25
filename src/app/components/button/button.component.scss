@@ -1,3 +1,5 @@
+@import "../../../assets/styles/breakpoints";
+
 .btn {
   background-color: var(--color-primary);
   border: none;
@@ -9,4 +11,32 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+
+  &.btn-primary {
+    background-color: var(--color-primary);
+  }
+
+  &.btn-outline {
+    background-color: white;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  :host.full-mobile {
+    width: 100%;
+    .btn {
+      width: 100%;
+    }
+  }
 }

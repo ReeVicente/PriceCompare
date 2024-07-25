@@ -1,19 +1,45 @@
 <main class="container">
   <div class="container-left">
-  <app-filter-card ></app-filter-card>
+    <app-filter-card (onFilter)="tarifService.applyFilter($event)"></app-filter-card>
   </div>
   <div class="container-right">
     <div class="container-header">
-      <app-select selectLabel="Order by:" [selectOptions]="[{label: 'Price: Ascending', value: '1'}, {label: 'Price: Descending', value: '2'}]"></app-select>
+      <app-select selectLabel="Order by:" [selectOptions]="
+          [
+            {label: 'Price: Ascending', value: 'asc'},
+            {label: 'Price: Descending', value: 'desc'}
+          ]
+        "
+                  (change)="applyPriceOrder($event)"
+      ></app-select>
       <div class="container-header-right">
-        <app-button (onClick)="openModal()">Filter</app-button>
-        <app-button>Clean Filter</app-button>
+        <app-filter-modal></app-filter-modal>
       </div>
     </div>
-    <app-card [position]="1" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
-    <app-card [position]="2" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
-    <app-card [position]="3" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
-    <app-card [position]="4" title="Tarif" [downloadSpeed]="30" [uploadSpeed]="9" [price]="30" [benefits]="['Benefit 1', 'Benefit 2', 'Benefit 3']"></app-card>
+
+    <div *ngIf="(tarifs$ | async) as tarifs; else loading">
+      <app-card
+        *ngFor="let tarif of tarifs index as i"
+        [position]="i +1"
+        [title]="tarif.name"
+        [downloadSpeed]="tarif.downloadSpeed"
+        [uploadSpeed]="tarif.uploadSpeed"
+        [price]="tarif.price"
+        [benefits]="tarif.benefitsNames"></app-card>
+
+      <div
+        *ngIf="tarifs && tarifs?.length === 0"
+        class="no-results">No results found
+      </div>
+
+    </div>
+
+    <ng-template #loading>
+      <div class="loading">
+        Loading...
+      </div>
+    </ng-template>
+
   </div>
-  <app-modal modalTitle="modalTitle" [isOpen]="isOpen" (onClose)="closeModal()" ></app-modal>
+
 </main>

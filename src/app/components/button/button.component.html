@@ -1,3 +1,6 @@
-<button class="btn" (click)="onClickHandler()">
+<button class="btn" [disabled]="disabled" [ngClass]="{
+  'btn-primary': btnStyle === 'primary',
+  'btn-outline': btnStyle === 'outline',
+}" [type]="type" (click)="onClickHandler()">
   <ng-content></ng-content>
 </button>

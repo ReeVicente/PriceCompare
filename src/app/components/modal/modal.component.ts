@@ -16,6 +16,4 @@ export class ModalComponent {
   closeModal() {
     this.onClose.emit();
   }
-
-
 }

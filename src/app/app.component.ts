@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {TarifService} from "./services/tarif.service";
+import {IFilter} from "./models/filter.model";
+import {delay, filter, first} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -7,13 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'verivox';
-  isOpen = false;
+  tarifService = inject(TarifService);
+  tarifs$ = this.tarifService.tarifList$;
 
-  openModal() {
-    this.isOpen = true;
-  }
-
-  closeModal() {
-    this.isOpen = false;
+  applyPriceOrder(e: Event) {
+    let target = e.target as HTMLSelectElement;
+    this.tarifService.applyPriceOrder(target.value);
   }
 }
