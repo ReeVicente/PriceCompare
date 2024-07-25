@@ -1,0 +1,6 @@
+<app-button (onClick)="openModal()">Filter</app-button>
+<app-button btnStyle="outline" (onClick)="tarifService.clearFilters()">Clear Filter</app-button>
+
+<app-modal modalTitle="" [isOpen]="isOpenModal" (onClose)="closeModal()">
+  <app-filter-card (onFilter)="tarifService.applyFilter($event)"></app-filter-card>
+</app-modal>
